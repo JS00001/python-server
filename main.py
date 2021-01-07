@@ -27,7 +27,9 @@ discord = DiscordOAuth2Session(app)
 #   Flask Routes
 from routes.user import user_blueprint
 from routes.login import login_blueprint
+from routes.logout import logout_blueprint
 
+app.register_blueprint(logout_blueprint)
 app.register_blueprint(login_blueprint)
 app.register_blueprint(user_blueprint)
 
