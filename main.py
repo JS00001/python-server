@@ -21,7 +21,8 @@ app.config["DISCORD_REDIRECT_URI"] = getenv("REDIRECT_URL")
 app.config["DISCORD_CLIENT_SECRET"] = getenv("CLIENT_SECRET")
 
 #   Exported Variables
-mongo = PyMongo(app).db
+mongo = PyMongo(app)
+database = mongo.db.users
 discord = DiscordOAuth2Session(app)
 
 #   Flask Routes
