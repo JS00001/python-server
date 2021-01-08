@@ -22,7 +22,8 @@ app.config["DISCORD_CLIENT_SECRET"] = getenv("CLIENT_SECRET")
 
 #   Exported Variables
 mongo = PyMongo(app)
-database = mongo.db.users
+dbusers = mongo.db.users
+dbproducts = mongo.db.products
 discord = DiscordOAuth2Session(app)
 
 #   Flask Routes
