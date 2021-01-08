@@ -4,7 +4,7 @@ Author: JS
 """
 
 from os import getenv, environ
-from flask import Flask, jsonify
+from flask import Flask, jsonify, redirect
 from flask_pymongo import PyMongo
 from flask_discord import DiscordOAuth2Session
 from dotenv import load_dotenv
