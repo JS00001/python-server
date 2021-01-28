@@ -22,33 +22,31 @@ $ .\venv\scripts\activate && flask run
 
 #### Server Exclusive Endpoints
 <hr>
-<br>
+
 [Login with Discord](http://localhost:5000/v1/login) | `http://localhost:5000/v1//login`
-<br>
-<br>
+
 Callback Returns
 ```json
 {
   "userid": ""
 }
 ```
-──────────────────────────────────────────────────────
+<hr>
 
 [Logout of Website](http://localhost:5000/v1/logout) | `http://localhost:5000/v1/logout`
-<br>
-<br>
+
 Callback Returns
 ```json
 {
   "error": false
 }
 ```
-──────────────────────────────────────────────────────
+<hr>
+
 #### Api-key Accessed Endpoints
 
 [List all Products](http://localhost:5000/v1/products/list) | `http://localhost:5000/v1/products/list`
-<br>
-<br>
+
 Authorization
 - Header Required: **api-key**
 - Permission Required: **MANAGE_PRODUCTS**
@@ -71,11 +69,10 @@ Callback Returns
 } 
 ]
 ```
-──────────────────────────────────────────────────────
+<hr>
 
 [Add a product](http://localhost:5000/v1/products/add) | `http://localhost:5000/v1/products/add`
-<br>
-<br>
+
 Authorization
 - Header Required: **api-key**
 - Permission Required: **MANAGE_PRODUCTS**
@@ -97,11 +94,10 @@ Callback Returns
   "category": "CATEGORY"
 }
 ```
-──────────────────────────────────────────────────────
+<hr>
 
 [Remove a product](http://localhost:5000/v1/products/remove) | `http://localhost:5000/v1/products/remove`
-<br>
-<br>
+
 Authorization
 - Header Required: **api-key**
 - Permission Required: **MANAGE_PRODUCTS**
@@ -117,6 +113,6 @@ Callback Returns
   "error": false
 }
 ```
-──────────────────────────────────────────────────────
+<hr>
 
 
