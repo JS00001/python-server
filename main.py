@@ -4,7 +4,7 @@ Author: JS
 """
 
 from os import getenv, environ
-from flask import Flask, jsonify, redirect
+from flask import Flask, jsonify
 from flask_pymongo import PyMongo
 from flask_discord import DiscordOAuth2Session
 from dotenv import load_dotenv
@@ -23,14 +23,17 @@ app.config["DISCORD_CLIENT_SECRET"] = getenv("CLIENT_SECRET")
 #   Exported Variables
 mongo = PyMongo(app)
 dbusers = mongo.db.users
+dbapikeys = mongo.db.apikeys
 dbproducts = mongo.db.products
 discord = DiscordOAuth2Session(app)
 
 #   Flask Routes
-from routes.user import user_blueprint
-from routes.login import login_blueprint
-from routes.logout import logout_blueprint
+from routes.v1.user import user_blueprint
+from routes.v1.login import login_blueprint
+from routes.v1.logout import logout_blueprint
+from routes.v1.products import products_blueprint
 
+app.register_blueprint(products_blueprint)
 app.register_blueprint(logout_blueprint)
 app.register_blueprint(login_blueprint)
 app.register_blueprint(user_blueprint)

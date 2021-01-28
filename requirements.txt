@@ -4,3 +4,4 @@ Flask-PyMongo>=2.3.0
 Flask-Discord>=0.1.64
 python-dotenv>=0.15.0
 requests>=2.25.1
+braintree>=4.5.0

@@ -2,7 +2,7 @@ from main import discord, dbusers
 from flask import Blueprint, jsonify, redirect
 from flask_discord import requires_authorization, Unauthorized
 
-login_blueprint = Blueprint("login_blueprint", __name__)
+login_blueprint = Blueprint("login_blueprint", __name__, url_prefix='/v1/login')
 
 # Error Handling
 @login_blueprint.errorhandler(Unauthorized)
@@ -11,20 +11,20 @@ def authorization():
 
 
 # Login Route (Redirects to Discord)
-@login_blueprint.route("/login")
+@login_blueprint.route("/")
 def login():
     return discord.create_session()
 
 
 # Callback Route (Processes Data)
-@login_blueprint.route("/login/callback")
+@login_blueprint.route("/callback")
 def callback():
     discord.callback()
     return redirect("http://localhost:5000/login/profile")
 
 
 # Profile Route (View user data)
-@login_blueprint.route("/login/profile")
+@login_blueprint.route("/profile")
 @requires_authorization
 def profile():
     user = discord.fetch_user()
