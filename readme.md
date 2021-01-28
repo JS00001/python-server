@@ -21,9 +21,8 @@ $ .\venv\scripts\activate && flask run
 ## Endpoints
 
 #### Server Exclusive Endpoints
-<hr>
 
-[Login with Discord](http://localhost:5000/v1/login) | `http://localhost:5000/v1//login`
+[Login with Discord](http://localhost:5000/v1/login) | `http://localhost:5000/v1/login`
 
 Callback Returns
 ```json
@@ -111,6 +110,21 @@ Callback Returns
 ```json
 {
   "error": false
+}
+```
+<hr>
+
+[Get User Data](http://localhost:5000/v1/users/<user_id>) | `http://localhost:5000/v1/products/<user_id>`
+
+Authorization
+- Header Required: **api-key**
+- Permission Required: **MANAGE_USERS**
+- Request Type: **GET**
+
+Callback Returns
+```json
+{
+  "userid": "1"
 }
 ```
 <hr>
