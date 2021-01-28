@@ -1,4 +1,4 @@
-# Python oAuth2
+# Python Backend
 
 ### Installation
 This server requires Python to run.
@@ -40,7 +40,7 @@ Callback Returns
 Callback Returns
 ```json
 {
-  
+  "error": false
 }
 ```
 ──────────────────────────────────────────────────────
@@ -56,9 +56,20 @@ Authorization
 
 Callback Returns
 ```json
-{
-  
-}
+[
+  {
+    "name": "NAME",
+    "description": "DESCRIPTION",
+    "price": 0,
+    "category": "CATEGORY"
+  },
+  {
+    "name": "NAME",
+    "description": "DESCRIPTION",
+    "price": 0,
+    "category": "CATEGORY"
+} 
+]
 ```
 ──────────────────────────────────────────────────────
 
@@ -80,7 +91,30 @@ Data Requirement
 Callback Returns
 ```json
 {
-  
+  "name": "NAME",
+  "description": "DESCRIPTION",
+  "price": 0,
+  "category": "CATEGORY"
+}
+```
+──────────────────────────────────────────────────────
+
+[Remove a product](http://localhost:5000/v1/products/remove) | `http://localhost:5000/v1/products/remove`
+<br>
+<br>
+Authorization
+- Header Required: **api-key**
+- Permission Required: **MANAGE_PRODUCTS**
+- Request Type: **DELETE**
+
+Data Requirement
+- Body (Json Formatted).
+    - name
+
+Callback Returns
+```json
+{
+  "error": false
 }
 ```
 ──────────────────────────────────────────────────────
