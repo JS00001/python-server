@@ -19,4 +19,70 @@ $ .\venv\scripts\activate && flask run
 **Create a `.env` file** - The .env file for this project is included in the gitignore for safety purposes. Copy the `.env.example` file and rename it to `.env`, and fill out all fields accordingly
 
 ## Endpoints
-[Login with Discord](http://localhost:5000/login) | `http://localhost:5000/login`
+
+#### Server Exclusive Endpoints
+──────────────────────────────────────────────────────
+<br>
+[Login with Discord](http://localhost:5000/v1/login) | `http://localhost:5000/v1//login`
+<br>
+<br>
+Callback Returns
+```json
+{
+  "userid": ""
+}
+```
+──────────────────────────────────────────────────────
+
+[Logout of Website](http://localhost:5000/v1/logout) | `http://localhost:5000/v1/logout`
+<br>
+<br>
+Callback Returns
+```json
+{
+  
+}
+```
+──────────────────────────────────────────────────────
+#### Api-key Accessed Endpoints
+
+[List all Products](http://localhost:5000/v1/products/list) | `http://localhost:5000/v1/products/list`
+<br>
+<br>
+Authorization
+- Header Required: **api-key**
+- Permission Required: **MANAGE_PRODUCTS**
+- Request Type: **GET**
+
+Callback Returns
+```json
+{
+  
+}
+```
+──────────────────────────────────────────────────────
+
+[Add a product](http://localhost:5000/v1/products/add) | `http://localhost:5000/v1/products/add`
+<br>
+<br>
+Authorization
+- Header Required: **api-key**
+- Permission Required: **MANAGE_PRODUCTS**
+- Request Type: **POST**
+
+Data Requirement
+- Body (Json Formatted).
+    - name
+    - description
+    - price
+    - category
+
+Callback Returns
+```json
+{
+  
+}
+```
+──────────────────────────────────────────────────────
+
+
