@@ -21,7 +21,7 @@ $ .\venv\scripts\activate && flask run
 ## Endpoints
 
 #### Server Exclusive Endpoints
-──────────────────────────────────────────────────────
+<hr>
 <br>
 [Login with Discord](http://localhost:5000/v1/login) | `http://localhost:5000/v1//login`
 <br>
