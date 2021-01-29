@@ -14,3 +14,11 @@ class Product:
             "category": self.category[0],
             "description": self.description[0]
         })
+
+    def pull(self):
+        return {
+            "price": self.price,
+            "name": self.name,
+            "category": self.category,
+            "description": self.description
+        }

@@ -25,16 +25,19 @@ mongo = PyMongo(app)
 dbusers = mongo.db.users
 dbapikeys = mongo.db.apikeys
 dbproducts = mongo.db.products
+dbtransactions = mongo.db.transactions
 discord = DiscordOAuth2Session(app)
 
 #   Flask Routes
 from routes.v1.user import user_blueprint
 from routes.v1.login import login_blueprint
+from routes.v1.apikey import apikey_blueprint
 from routes.v1.logout import logout_blueprint
 from routes.v1.products import products_blueprint
 
 app.register_blueprint(products_blueprint)
 app.register_blueprint(logout_blueprint)
+app.register_blueprint(apikey_blueprint)
 app.register_blueprint(login_blueprint)
 app.register_blueprint(user_blueprint)
 
